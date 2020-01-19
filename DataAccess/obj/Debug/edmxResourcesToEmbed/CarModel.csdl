@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Models" Relationship="Self.FK_Models_Brand" FromRole="Brand" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Owner" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="Int32" Nullable="false" />
+    <Property Name="HorsePower" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Models" Relationship="Self.FK_Cars_Model" FromRole="Car" ToRole="Model" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Cars_User" FromRole="Car" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Brand" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Brands" Relationship="Self.FK_Models_Brand" FromRole="Model" ToRole="Brand" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Model" FromRole="Model" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_User" FromRole="User" ToRole="Car" />
+  </EntityType>
+  <Association Name="FK_Models_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="Brand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Model" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <EntitySet Name="Models" EntityType="Self.Model" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Models_Brand" Association="Self.FK_Models_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Model" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Model" Association="Self.FK_Cars_Model">
+      <End Role="Model" EntitySet="Models" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_User" Association="Self.FK_Cars_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,85 @@
+03-May-19 10:04:03 PM	This log contains information about the import schema operation into project 'CarsDB' on computer 'DESKTOP-0P0GV8A' by user 'Petko'.
+03-May-19 10:04:04 PM	Import of database schema has started.
+03-May-19 10:04:14 PM	Gathering database credentials
+03-May-19 10:04:14 PM	Gathering database options
+03-May-19 10:04:14 PM	Gathering generic database scoped configuration option
+03-May-19 10:04:15 PM	Gathering users
+03-May-19 10:04:15 PM	Gathering roles
+03-May-19 10:04:15 PM	Gathering application roles
+03-May-19 10:04:15 PM	Gathering role memberships
+03-May-19 10:04:15 PM	Gathering filegroups
+03-May-19 10:04:15 PM	Gathering full-text catalogs
+03-May-19 10:04:15 PM	Gathering assemblies
+03-May-19 10:04:15 PM	Gathering certificates
+03-May-19 10:04:15 PM	Gathering asymmetric keys
+03-May-19 10:04:15 PM	Gathering symmetric keys
+03-May-19 10:04:15 PM	Gathering encrypted symmetric keys
+03-May-19 10:04:15 PM	Gathering schemas
+03-May-19 10:04:15 PM	Gathering XML schema collections
+03-May-19 10:04:15 PM	Gathering user-defined data types
+03-May-19 10:04:15 PM	Gathering user-defined types
+03-May-19 10:04:15 PM	Gathering table types
+03-May-19 10:04:15 PM	Gathering unique keys for table types
+03-May-19 10:04:15 PM	Gathering primary keys for table types
+03-May-19 10:04:15 PM	Gathering indexes for table types
+03-May-19 10:04:15 PM	Gathering check constraints for table types
+03-May-19 10:04:15 PM	Gathering default constraints for table types
+03-May-19 10:04:15 PM	Gathering partition functions
+03-May-19 10:04:15 PM	Gathering partition schemes
+03-May-19 10:04:15 PM	Gathering functions
+03-May-19 10:04:15 PM	Gathering encrypted functions
+03-May-19 10:04:15 PM	Gathering aggregates
+03-May-19 10:04:15 PM	Gathering procedures
+03-May-19 10:04:15 PM	Gathering encrypted procedures
+03-May-19 10:04:15 PM	Gathering tables
+03-May-19 10:04:15 PM	Gathering primary keys
+03-May-19 10:04:15 PM	Gathering unique constraints
+03-May-19 10:04:15 PM	Gathering foreign keys
+03-May-19 10:04:15 PM	Gathering default constraints
+03-May-19 10:04:15 PM	Gathering check constraints
+03-May-19 10:04:15 PM	Gathering views
+03-May-19 10:04:15 PM	Gathering encrypted views
+03-May-19 10:04:15 PM	Gathering indexes
+03-May-19 10:04:15 PM	Gathering statistics
+03-May-19 10:04:15 PM	Gathering full-text index stoplists
+03-May-19 10:04:15 PM	Gathering search property lists
+03-May-19 10:04:15 PM	Gathering search properties
+03-May-19 10:04:15 PM	Gathering full-text indexes
+03-May-19 10:04:15 PM	Gathering column store indexes
+03-May-19 10:04:15 PM	Gathering spatial indexes
+03-May-19 10:04:15 PM	Gathering XML indexes
+03-May-19 10:04:15 PM	Gathering Selective XML indexes
+03-May-19 10:04:15 PM	Gathering encrypted triggers
+03-May-19 10:04:15 PM	Gathering triggers
+03-May-19 10:04:17 PM	Gathering encrypted and clr ddl triggers
+03-May-19 10:04:17 PM	Gathering ddl triggers
+03-May-19 10:04:17 PM	Gathering synonyms
+03-May-19 10:04:17 PM	Gathering defaults
+03-May-19 10:04:17 PM	Gathering data constraint uddt bindings
+03-May-19 10:04:17 PM	Gathering rules
+03-May-19 10:04:17 PM	Gathering data constraint uddt bindings
+03-May-19 10:04:17 PM	Gathering message types
+03-May-19 10:04:17 PM	Gathering queues
+03-May-19 10:04:17 PM	Gathering contracts
+03-May-19 10:04:17 PM	Gathering services
+03-May-19 10:04:17 PM	Gathering event notifications
+03-May-19 10:04:17 PM	Gathering remote service bindings
+03-May-19 10:04:17 PM	Gathering broker priorities
+03-May-19 10:04:17 PM	Gathering signatures
+03-May-19 10:04:17 PM	Gathering data compression options
+03-May-19 10:04:17 PM	Gathering sequence types
+03-May-19 10:04:17 PM	Gathering security policies
+03-May-19 10:04:17 PM	Gather column encryption keys
+03-May-19 10:04:17 PM	Gathering column master keys
+03-May-19 10:04:17 PM	Gathering external data sources
+03-May-19 10:04:17 PM	Gathering external file formats
+03-May-19 10:04:17 PM	Gathering external tables
+03-May-19 10:04:17 PM	Gathering extended properties
+03-May-19 10:04:18 PM	Gathering credentials
+03-May-19 10:04:18 PM	Gathering logins
+03-May-19 10:04:18 PM	Gathering server audits
+03-May-19 10:04:19 PM	Scanning project for duplicate elements
+03-May-19 10:04:19 PM	Finished duplicate element processing
+03-May-19 10:04:20 PM	Finished importing database.
+03-May-19 10:04:20 PM	A summary of the import was saved to the following location: C:\Users\Petko\source\repos\CarsAplication\CarsDB\Import Schema Logs\CarsDB_20190503070403.log
+03-May-19 10:04:20 PM	Click Finish to continue...

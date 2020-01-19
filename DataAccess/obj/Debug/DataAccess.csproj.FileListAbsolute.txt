@@ -1,0 +1,12 @@
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Petko\source\repos\CarsAplication\DataAccess\obj\Debug\DataAccess.pdb

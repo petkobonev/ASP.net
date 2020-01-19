@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Owner" Type="int" Nullable="false" />
+    <Property Name="Model" Type="int" Nullable="false" />
+    <Property Name="HorsePower" Type="int" Nullable="false" />
+    <Property Name="Year" Type="date" Nullable="false" />
+    <Property Name="Color" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Brand" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cars_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Model" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_User">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Models_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="Brand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarsDBModelStoreContainer">
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cars_Model" Association="Self.FK_Cars_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_User" Association="Self.FK_Cars_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Models_Brand" Association="Self.FK_Models_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

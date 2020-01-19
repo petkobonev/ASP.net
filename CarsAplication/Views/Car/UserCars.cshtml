@@ -1,0 +1,61 @@
+﻿@using CarsAplication.Models
+@using CarsAplication.Helpers
+@model List<CarsAplication.Models.CarViewModel>
+
+    @{
+    ViewBag.Title = "UserCars";
+    }
+
+    <h2>UserCars</h2>
+
+    <div>
+        <h4>Model</h4>
+        <hr />
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Owner</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Horsepower</th>
+                    <th>Year</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (CarViewModel car in Model)
+                {
+                <tr>
+                    <td>@car.ID</td>
+                    <td>@car.Owner.Name</td>
+                    <td>@car.Model.Brand.Name</td>
+                    <td>@car.Model.Name</td>
+                    <td>@car.Color</td>
+                    <td>@car.HorsePower</td>
+                    <td>@car.Year</td>
+
+                    @if (LoginSession.Current.IsAuthenticated)
+                    {
+                    <td>@Html.ActionLink("Edit", "Edit", "Car", new { id = car.ID }, new { @class = "btn btn-primary btn-sm" })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", "Car", new { id = car.ID }, new { onclick = "return confirm('Are you sure you want to delete this car?');", @class = "btn btn-danger btn-sm" })</td>
+                    }
+
+                </tr>
+                }
+
+            </tbody>
+            @if (LoginSession.Current.IsAuthenticated)
+            {
+            @Html.ActionLink("Add", "Create", "Car", null, new { @class = "btn btn-success btn-sm" })
+            }
+
+        </table>
+
+    </div>

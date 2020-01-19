@@ -1,0 +1,48 @@
+﻿@using CarsAplication.Models
+@model List<CarsAplication.Models.CarViewModel>
+
+@{
+    ViewBag.Title = "Cars";
+}
+
+<h2>UserCars</h2>
+
+    <div>
+    <h4>Model</h4>
+    <hr />
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Owner</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Horsepower</th>
+                <th>Year</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (CarViewModel car in Model)
+            {
+                <tr>
+                    <td>@car.ID</td>
+                    <td>@car.Owner.Name</td>
+                    <td>@car.Model.Brand.Name</td>
+                    <td>@car.Model.Name</td>
+                    <td>@car.Color</td>
+                    <td>@car.HorsePower</td>
+                    <td>@car.Year</td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>
